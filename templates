@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Regression Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 25px;
+            display: inline-block;
+            margin-top: 40px;
+            border-radius: 10px;
+            width: 350px;
+        }
+        .field {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        h3 {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Regression Model Prediction</h2>
+
+    <form action="/predict" method="post">
+        {% for feature in features %}
+            <div class="field">
+                <label>{{ feature }}</label>
+                <input 
+                    type="number" 
+                    step="any" 
+                    name="{{ feature }}" 
+                    placeholder="Enter {{ feature }}" 
+                    required>
+            </div>
+        {% endfor %}
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
+
