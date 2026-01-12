@@ -22,6 +22,11 @@ This project demonstrates an end-to-end machine learning workflow, from model tr
 4. Model training
 5. Model serialization using Joblib
 6. Web deployment using Flask
+   
+## 📸 Application Screenshots
+
+### Home Page
+![Home Page](Home_page.png)
 
 ## 🔹 How to Run Locally
 
